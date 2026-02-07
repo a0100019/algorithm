@@ -1,0 +1,14 @@
+val typeCount = nums.distinct().size // 중복 제거 후 개수 세기
+
+코틀린에서 Set 사용하기
+val mySet = mutableSetOf<Int>()
+mySet.add(1)
+mySet.add(2)
+mySet.add(2) // 중복! 무시됨
+println(mySet) // [1, 2]
+println(mySet.contains(1)) // true (O(1)의 속도로 확인)
+
+코틀린에서 toSet()을 호출하면 기본적으로 수정 불가능한(ReadOnly) Set이 반환됩니다.
+나중에 add를 하고 싶다면 **toMutableSet()**을 사용해야 합니다.
+
+toSet() 순서 유지함, toHashSet() 순서 상관없어서 더 빠름
