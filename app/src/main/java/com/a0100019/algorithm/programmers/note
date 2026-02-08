@@ -1,4 +1,14 @@
+@@@젤중요
+해시는 키주면 바로 값 찾을때, 스택/큐는 선후관계가 중요할 때
+
+
+@@@@@@@@@@@해시
+
+**"중복을 체크하거나 특정 키워드로 값을 찾아야 할 때"**는 무조건 **해시(Map)**를 쓰는 것이 코테의 정석입니다.
+
 val typeCount = nums.distinct().size // 중복 제거 후 개수 세기
+
+setOf(0)
 
 코틀린에서 Set 사용하기
 val mySet = mutableSetOf<Int>()
@@ -12,3 +22,72 @@ println(mySet.contains(1)) // true (O(1)의 속도로 확인)
 나중에 add를 하고 싶다면 **toMutableSet()**을 사용해야 합니다.
 
 toSet() 순서 유지함, toHashSet() 순서 상관없어서 더 빠름
+
+it to plays[it]는 내부적으로 **Pair(it, plays[it])**를 생성합니다.
+
+Array (배열): "칸이 고정된 아파트"
+Array는 처음 만들 때 크기가 정해지면 절대로 줄이거나 늘릴 수 없습니다. * 특징: add()나 remove() 같은 메서드가 아예 없습니다.
+할 수 있는 것: 이미 존재하는 칸의 내용물을 바꾸는 것만 가능합니다. (예: arr[0] = 10)
+
+MutableList (가변 리스트): "늘어나는 기차"
+MutableList는 필요에 따라 동적으로 칸을 추가하거나 삭제할 수 있습니다.
+특징: add(), removeAt(인덱스), remove(값), clear() 등 크기를 조절하는 메서드를 자유롭게 사용합니다.
+
+@@@@@@@@@@@@스택/큐
+
+mutableListOf<Int>()를 스택처럼 씀
+
+스택 (Stack)                      	큐 (Queue)
+핵심 원리	LIFO (Last In, First Out)	FIFO (First In, First Out)
+주요 용도	뒤로 가기, 실행 취소, 재귀 함수	작업 예약, 프로세스 관리, 맛집 대기
+
+import java.util.ArrayDeque
+보통 **'어레이 데크'**라고 많이 읽습니다!
+이 자료구조의 이름 자체가 Double-Ended Queue(양방향 큐)의 약자거든요.
+
+val deque = ArrayDeque<Int>()
+
+// --- 1. 스택(Stack)처럼 쓸 때 (LIFO) ---
+deque.addLast(1)      // Push
+deque.lastOrNull()    // Peek
+deque.removeLast()    // Pop
+
+// --- 2. 큐(Queue)처럼 쓸 때 (FIFO) ---
+deque.addLast(1)      // Enqueue
+deque.firstOrNull()   // Peek
+deque.removeFirst()   // Dequeue
+
+val first = deque.removeFirst()
+하면 지워지고 들어감
+
+(100 - progresses[i] + speeds[i] - 1) / speeds[i]
+이렇게 하면 나누어떨어질 때는 딱 맞게, 나머지가 있을 때만 올림이 됩니다.
+
+s.split("")하면 앞뒤에 공백 하나 추가되며, 리스트 만드는데 메모리 소요
+
+val hasEven = numbers.any { it % 2 == 0 }
+// 8이 짝수이므로, 8을 확인하는 순간 바로 true!
+
+@@@@@@@정렬
+
+slice는 리스트, sliceArray는 array 로 줌
+sliceArray(1..4): "1부터 4까지!" 라고 직관적으로 보입니다. (4 포함)
+copyOfRange(1, 5): "1부터 시작해서 5 직전까지"입니다. (5 미포함)
+
+sort와 sorted의 차이는 "기존의 것을 바꾸느냐(Mutable)" 아니면 **"새로운 것을 만드느냐(Immutable)"**의 차이
+
+val numbers = listOf(1, 2, 3, 4, 5)
+val text = numbers.joinToString(separator = "-", prefix = "[", postfix = "]", limit = 3)
+// 출력: "[1-2-3-...]"
+
+코틀린에서 **sortedBy**와 **sortedWith**의 차이는 "단순한 기준 하나만 쓸 것인가"
+아니면 **"복잡한 비교 규칙을 직접 만들 것인가"**의 차이입니다.
+
+mapIndexed { index, i ->  }
+
+kotlin.math.* 를 임포트하면 수학 관련 함수를 한꺼번에 쓸 수 있습니다.
+
+런타임 에러 (Runtime Error)	**90% 확률로 인덱스 범위 초과(IndexOutOfBounds)**입니다. 그 외에는 스택 오버플로우나 0으로 나누기 등이 있습니다.
+시간 초과 (Timeout)	로직은 맞는데 너무 느린 경우입니다. ($O(N^2)$을 $O(N \log N)$으로 바꿔야 할 때)
+실패 (Wrong Answer)	에러는 안 났지만, 결과값이 틀린 경우입니다. (로직 설계 오류나 엣지 케이스 미처분)
+컴파일 에러 (Compile Error)	문법이 틀렸거나, 필요한 라이브러리(예: kotlin.math.*)를 임포트하지 않은 경우입니다.

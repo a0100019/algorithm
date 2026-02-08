@@ -1,5 +1,6 @@
 package com.a0100019.algorithm.programmers.hash
 
+//의상
 class Solution42578 {
     fun solution(clothes: Array<Array<String>>): Int {
         var answer = 1 // 곱셈을 해야 하므로 1로 시작합니다.

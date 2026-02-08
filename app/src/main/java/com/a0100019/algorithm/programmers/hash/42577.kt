@@ -1,5 +1,6 @@
 package com.a0100019.algorithm.programmers.hash
 
+//전화번호목록
 class Solution42577 {
     fun solution(phone_book: Array<String>): Boolean {
 
