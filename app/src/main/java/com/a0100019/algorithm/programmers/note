@@ -101,3 +101,13 @@ minOf, maxOf(1, 5, 10) // 3개 이상의 비교도 가능!
 리스트에 비교할땐 array.maxOrNull() / minOrNull() 쓰기!! 그냥 .max() 아님!!
 
 recursive function 재귀 함수
+
+adj = Adjacency(인접)     // bfs에서 사용
+BFS는 removeAt(0)을 써서 먼저 들어온 걸 먼저 빼야 합니다.
+
+최단 거리 / 최소 횟수	        BFS	            층별로 탐색하므로 처음 목표를 만났을 때가 무조건 최단 거리임.
+경로의 특징 / 모든 조합 탐색	DFS	            재귀를 이용해 상태를 전달하거나 백트래킹을 구현하기 쉬움.
+단순히 개수 세기 / 연결 확인	둘 다 상관없음	본인에게 더 익숙하고 실수 안 할 코드가 정석임.
+
+Unresolved reference 오류 - import 안한것
+import kotlin.math.*
