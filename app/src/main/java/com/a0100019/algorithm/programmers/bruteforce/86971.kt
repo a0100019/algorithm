@@ -27,7 +27,6 @@ class Solution86971 {
         return min
     }
 
-
     private fun bfs(start: Int, blocked: Int, n: Int): Int {
         var count = 0
         val visited = BooleanArray(n+1)
