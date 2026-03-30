@@ -1,6 +1,9 @@
 @@@젤중요
 해시는 키주면 바로 값 찾을때, 스택/큐는 선후관계가 중요할 때
 숫자.toString(2) = 숫자를 2진수 글자로 변환 / "11101".toInt(2) 2진수 문자열을 숫자로 변환
+in 0..1 (0<=x<=1) / in 0 until 1 (0<=x<1) = 0..<1
+2차원 배열 문제는 row = i / n, col = i % n 로 풀때가 많다
+10의 9승 언저리 범위를 주는 문제는 Long으로 풀어야 한다는 뜻
 
 @@@@@@@@@@@해시
 
@@ -45,11 +48,11 @@ import java.util.ArrayDeque
 보통 **'어레이 데크'**라고 많이 읽습니다!
 이 자료구조의 이름 자체가 Double-Ended Queue(양방향 큐)의 약자거든요.
 
-val deque = ArrayDeque<Int>()
+val deque = ArrayDeque<Int>()   //Double-Ended Queue의 약자로 스텍과 큐 모두 가능
 
 // --- 1. 스택(Stack)처럼 쓸 때 (LIFO) ---
 deque.addLast(1)      // Push
-deque.lastOrNull()    // Peek
+deque.lastOrNull()    // Peek (확인)
 deque.removeLast()    // Pop
 
 // --- 2. 큐(Queue)처럼 쓸 때 (FIFO) ---

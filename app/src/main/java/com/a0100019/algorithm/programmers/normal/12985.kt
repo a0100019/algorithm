@@ -1,4 +1,4 @@
-package com.a0100019.algorithm.programmers
+package com.a0100019.algorithm.programmers.normal
 
 class Solution12985 {
     fun solution(n: Int, a: Int, b: Int): Int {

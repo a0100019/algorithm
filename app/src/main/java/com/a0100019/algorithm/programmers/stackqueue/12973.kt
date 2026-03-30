@@ -1,4 +1,4 @@
-package com.a0100019.algorithm.programmers.stack
+package com.a0100019.algorithm.programmers.stackqueue
 
 class Solution12973 {
     fun solution(s: String): Int {
