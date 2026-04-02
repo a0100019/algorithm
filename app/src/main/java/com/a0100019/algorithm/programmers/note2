@@ -4,6 +4,20 @@
 in 0..1 (0<=x<=1) / in 0 until 1 (0<=x<1) = 0..<1
 2차원 배열 문제는 row = i / n, col = i % n 로 풀때가 많다
 10의 9승 언저리 범위를 주는 문제는 Long으로 풀어야 한다는 뜻
+양쪽 문자열 제거 val result = s.drop(1).dropLast(1)   =   substring(1, s.length - 1)
+
+[I@675d3402 같은 외계어는 array를 println 해서 그런것, .toList()로 바꾸거나 .contentToString() 해야됨
+
+// 1. 수정 가능한 리스트로 선언, add 가능
+val list = mutableListOf<Int>()
+var answer = intArrayOf() 인트어레이로 만들면 add가 안되기 때문에 answer = answer + 10 이렇게 추가
+
+val result = list.minOrNull()  // listOf(1, 2, 3).minOrNull() 이렇게 쓰자
+// 예: 유저 객체 리스트에서 가장 작은 나이 '값'만 가져오기
+val users = listOf(User("이유빈", 25), User("김네버", 30))
+val youngestAge = users.minOfOrNull { it.age } // 결과: 25, 숫자만 가져옴
+val youngestUser = users.minByOrNull { it.age } // 결과: User("이유빈", 25) 객체
+min(1, 2) 처럼 쓰고싶으면 import kotlin.math.min 해야함, 2개만 가능
 
 @@@@@@@@@@@해시
 
