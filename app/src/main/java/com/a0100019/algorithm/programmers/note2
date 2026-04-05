@@ -1,9 +1,26 @@
 fun main() {
     val sol = Solution()
-    println()
+    println(sol.solution())
 }
 
+//에러 내용이랑 위치 확인
+catch (e: Exception) {
+    e.printStackTrace() // 에러 이름 + 메시지 + '몇 번째 줄'에서 터졌는지 경로까지 다 찍어줍니다.
+}
+
+Operator call (연산자 호출) // > + * 같은 기호 말하는 것
+
 @@@젤중요
+
+sliceArray(0..5) // 배열자르기
+
+원형문제는 배열두번 더하기
+
+코딩테스트는 1초에 10^9 계산 가능 / 문제가 <1000 (10^3)인데 N^2이면 10^6이 됨
+
+temp = Temporary(임시의)
+
+최대공약수 (Greatest Common Divisor) 구하기 - 유클리드 호제법    // 최소공배수 (Least Common Multiple)
 
 시간 복잡도 - 빅오
 O(N) : N의 시간이 걸림. - 오더(Order) N이라고 읽음
@@ -69,6 +86,7 @@ val typeCount = nums.distinct().size // 중복 제거 후 개수 세기
 
 setOf(0)
 
+//중복제거면 set
 코틀린에서 Set 사용하기
 val mySet = mutableSetOf<Int>()
 mySet.add(1)
