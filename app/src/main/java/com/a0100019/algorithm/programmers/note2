@@ -3,14 +3,38 @@ fun main() {
     println(sol.solution())
 }
 
+stringbuilder 공부해놔야할듯
+
+조합(prefix)
+
+2. 소수 판별 (Primality Test)생성된 숫자가 소수인지 확인합니다.
+0과 1은 소수가 아닙니다.
+2부터 해당 숫자의 **제곱근($\sqrt{n}$)**까지 나누어떨어지는 수가 있는지 확인하는 것이 가장 효율적입니다.
+
 //에러 내용이랑 위치 확인
 catch (e: Exception) {
     e.printStackTrace() // 에러 이름 + 메시지 + '몇 번째 줄'에서 터졌는지 경로까지 다 찍어줍니다.
 }
 
+//이렇게하면 원하는 기준으로 정렬하면서 내려옴
+answer.sortedWith { a, b ->
+    (b + a).compareTo(a + b)    // compareTo 는 결과가 양수면 b를 앞으로 보냄, 즉 이렇게하면 오름차순 정렬
+}
+
+string은 .toTypedArray() 이고 arrayOf("aa", "bb")
+String은 기본형(Primitive)이 아니라 **객체(Object)**입니다.
+따라서 StringArray라는 별도의 클래스가 없고, **Array<String>**으로 처리됩니다. 그래서 "특정 타입(Typed)의 객체 배열로 바꾼다"는 의미에서 **.toTypedArray()**를 사용합니다.
+
 Operator call (연산자 호출) // > + * 같은 기호 말하는 것
 
 @@@젤중요
+
+Pair는 두 개의 값을 가질 수 있으며, 각각 first와 second라는 이름으로 접근합니다.
+println(pair1.second) // Apple
+val deque = ArrayDeque<Pair<Int, Int>>()
+deque.add(Pair(x, 0))
+val deque = ArrayDeque<Triple<Int, Int, Int>>()
+deque.add(Triple(1, 1, 1)) 세번째 값은 third로 접근
 
 sliceArray(0..5) // 배열자르기
 
