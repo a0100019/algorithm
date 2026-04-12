@@ -1,11 +1,31 @@
+77885,
+
 fun main() {
     val sol = Solution()
     println(sol.solution())
 }
 
-stringbuilder 공부해놔야할듯
+Char 타입인 '1'에 .toInt()를 하면 숫자 1이 아니라 아스키 코드 값인 49가 반환됩니다.
+char 타입에는: it.digitToInt()를 사용!!
+
+//시간제한 까다로울때 joinToString 대신
+// StringBuilder를 사용하여 효율적으로 문자열 생성
+        val answer = StringBuilder()
+        for (char in deque) {
+            answer.append(char)
+        }
+return answer.toString()
+
+보통 3바퀴 돌떄까지 없으면 해가 없는 걸로 함
 
 조합(prefix)
+
+비트연산
+and (&): 두 비트가 모두 1일 때만 1을 반환합니다. (특정 비트 추출/마스킹)
+or (|): 두 비트 중 하나만 1이어도 1을 반환합니다. (특정 비트 켜기)
+.inv() (~): 비트를 반전시킵니다. (0을 1로, 1을 0으로)
+shr 1 (>>): 비트를 오른쪽으로 이동시킵니다. (2로 나누는 효과)
+                val lastZero = (x.inv() and (x+1))
 
 2. 소수 판별 (Primality Test)생성된 숫자가 소수인지 확인합니다.
 0과 1은 소수가 아닙니다.
@@ -158,8 +178,13 @@ deque.addLast(1)      // Enqueue
 deque.firstOrNull()   // Peek
 deque.removeFirst()   // Dequeue
 
+error: val cannot be reassigned
+val 변수를 바꾸려고함
+
 val first = deque.removeFirst()
 하면 지워지고 들어감
+
+deque1.sum()을 호출할 때, deque1 안의 숫자들이 Long이어도 sum()의 결과가 Int 범위를 넘어가면 계산 도중에 오버플로우가 날 수 있습니다. 가장 안전한 방법은 루프를 돌며 직접 더하는 것입니다
 
 (100 - progresses[i] + speeds[i] - 1) / speeds[i]
 이렇게 하면 나누어떨어질 때는 딱 맞게, 나머지가 있을 때만 올림이 됩니다.
@@ -235,7 +260,8 @@ bfs가 좋은 것은 최단 거리를 구할때이고 먼저 도착한 순간이
 일반적인 큐(Queue)가 선입선출(먼저 들어온 게 먼저 나감) 방식이라면, 우선순위 큐는 "들어온 순서와 상관없이,
 우선순위가 가장 높은 데이터가 먼저 나가는" 방식입니다.
 
-        val pq = PriorityQueue<Int>() //최소 힙(Min Heap) 자료구조를 사용합니다. 가장 작은 숫자를 맨 앞에 배치합니다.
+import java.util.PriorityQueue
+val pq = PriorityQueue<Int>() //최소 힙(Min Heap) 자료구조를 사용합니다. 가장 작은 숫자를 맨 앞에 배치합니다.
 
 힙은 **완전 이진 트리(Complete Binary Tree)**의 일종으로, 부모 노드와 자식 노드 간에 일정한 대소 관계가 성립하는 자료구조입니다.
 
